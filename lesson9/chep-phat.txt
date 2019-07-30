@@ -1,0 +1,49 @@
+PH08862	Nguyễn Thanh Phương
+PH08807	Nguyễn Thành Đạt
+PH08851	Vũ Đức Trung
+PH08855	Hoàng Tiến Sỹ
+PH08801	Đỗ Việt Thắng
+
+chép ra giấy mỗi người 5 lần phần này
+1. Vòng lặp là gì ?
+
+ 
+Vòng lặp là một mã lệnh trong đó chương trình được thực hiện lặp đi lặp lại nhiều lần cho đến khi thỏa một điều kiện nào đó. Vòng lặp là một khái niệm cơ bản trong lập trình cấu trúc.
+
+for ($bien_dieu_khien; $bieu_thuc_dieu_kien; $bieu_thuc_thay_doi_bien_dieu_khien)
+{
+    // lệnh
+}
+
+for ($i = 0; $i < 10; $i++){
+    echo $i . ' - ';
+}
+
+$i = 0 là biến điều khiển có giá trị khởi tạo bằng 0
+$i < 10 là biểu thức điều kiện dừng vòng lặp, có ý nghĩa nếu $i < 10 thì vòng lặp vẫn tiếp tục, ngược lại nếu $i >= 10 thì biểu thức sai nên vòng lặp sẽ thoát
+$i++ là biểu thức thay đổi biến điều khiển, sau mỗi vòng lặp $i sẽ tăng lên 1
+
+for ($i = 9, $count = 10; $i <= $count; $i--){
+    echo $i . ' - ';
+}
+
+
+
+tất cả lớp phải làm phần dưới này ra file php
+-- lấy ví dụ code các hàm sau (trong file php) - comment giải thích ý nghĩa
+array_splice() 
+count()
+compact()
+extract()
+sort()
+array_slice()
+array_shift()
+array_shift()
+array_pop()
+array_push()
+implode()
+explode()
+array_replace()
+
+
+
