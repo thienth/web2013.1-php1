@@ -7,7 +7,9 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<form action="save-add.php" method="get">
+	<form action="save-add.php" 
+			enctype="multipart/form-data" 
+			method="post">
 		<div>
 			<label for="">Username</label>
 			<input type="text" name="username" value="" placeholder="">
@@ -22,7 +24,7 @@
 		</div>
 		<div>
 			<label for="">Avatar</label>
-			<input type="text" name="avatar" value="" placeholder="">
+			<input type="file" name="avatar" value="" placeholder="">
 		</div>
 		<div>
 			<button type="submit">Save</button>

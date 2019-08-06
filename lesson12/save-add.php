@@ -1,9 +1,16 @@
 <?php 
 // 1. Lay data tu form gui sang
-$username = $_GET['username'];
-$email = $_GET['email'];
-$password = $_GET['password'];
-$avatar = $_GET['avatar'];
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$image = $_FILES['avatar'];
+$avatar = "";
+// upload anh 
+if($image['size'] > 0){ // kiem tra kich co anh
+	$filename = uniqid() . "-" . $image['name'];
+	move_uploaded_file($image['tmp_name'], 'uploads/' . $filename);
+	$avatar = 'uploads/' . $filename;
+}
 
 $host = "127.0.0.1";
 $dbname = "web2013"; // tên database - lesson6
