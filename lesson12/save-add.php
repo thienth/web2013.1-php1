@@ -32,7 +32,7 @@ $sql = "insert into users
 		values 
 			('$username', '$password', '$email', '$avatar')";
 
-// var_dump($sql);die;
+var_dump($sql);die;
 
 // nạp câu truy vấn vào kết nối
 $stmt = $connect->prepare($sql);

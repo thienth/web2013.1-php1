@@ -35,7 +35,8 @@ $data = $stmt->fetch();
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<form action="save-edit.php" method="get">
+	<form action="save-edit.php" method="post"
+			enctype="multipart/form-data">
 		<input type="hidden" name="id" value="<?php echo $data['id']?>">
 		<div>
 			<label for="">Username</label>
@@ -46,8 +47,10 @@ $data = $stmt->fetch();
 			<input type="text" name="email" value="<?php echo $data['email']?>" placeholder="">
 		</div>
 		<div>
+			<img src="<?php echo $data['avatar']?>" width="150">
+			<br>
 			<label for="">Avatar</label>
-			<input type="text" name="avatar" value="<?php echo $data['avatar']?>" placeholder="">
+			<input type="file" name="avatar" placeholder="">
 		</div>
 		<div>
 			<button type="submit">Save</button>
