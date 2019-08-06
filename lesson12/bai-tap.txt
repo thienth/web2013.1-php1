@@ -1,0 +1,27 @@
+Tạo cơ sở dữ liệu "assignment_php1"
+Tạo bảng "rooms" gồm các cột theo thiết kế sau:
+
+id int pk ai
+name varchar(255) 
+hotel_id int
+price float
+image varchar(255)
+detail text
+status int
+
+Tạo bảng "hotels" gồm các cột theo thiết kế sau:
+id int pk ai
+name varchar(255) 
+image varchar(255)
+
+
+1. Thực hiện các chức năng:
+	- Hiển thị danh sách hotels
+	- Thêm mới hotels
+	- Sửa hotels
+	- Xóa hotels
+2. Thực hiện các chức năng:
+	- Hiển thị danh sách rooms
+	- Thêm mới rooms
+	- Sửa rooms
+	- Xóa rooms
