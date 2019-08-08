@@ -1,0 +1,20 @@
+Phương, 
+Tươi, 
+Sỹ,
+Minh
+
+viết lại lý thuyết về câu lệnh select trong mysql
+lấy ví dụ với csdl angular-service.sql
+
+select theo bảng
+select theo điều kiện
+select theo nhiều điều kiện (or)
+select theo nhiều điều kiện (and)
+
+select có join 2 bảng
+select có group
+select có group having
+
+select union
+select distinct
+
