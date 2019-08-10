@@ -1,29 +1,14 @@
 <?php 
-
+require_once './db.php';
 $id = $_GET['id'];
 
-$host = "127.0.0.1";
-$dbname = "web2013"; // tên database - lesson6
-$dbusername = "root";
-$dbpassword = "123456"; // mật khẩu truy cập vào mysql - nếu sử dụng xampp trên windows thì để ""
-
-try{
-	$connect = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbusername, $dbpassword);	
-}catch(Exception $ex){
-	var_dump($ex->getMessage());
-	die;
-}
-
 $sql = "select * from users where id = $id";
-// nạp câu truy vấn vào kết nối
-$stmt = $connect->prepare($sql);
-// thực thi câu truy vấn với csdl
-$stmt->execute();
-// lay du lieu tu cau sql
-$data = $stmt->fetch();
-// var_dump($data);die;
+$data = executeQuery($sql, false);
 
 
+$sqlDepartment = "select * from departments";
+
+$departArr = executeQuery($sqlDepartment, true);
  ?>
 
 <!DOCTYPE html>
@@ -45,6 +30,18 @@ $data = $stmt->fetch();
 		<div>
 			<label for="">Email</label>
 			<input type="text" name="email" value="<?php echo $data['email']?>" placeholder="">
+		</div>
+		<div>
+			<label for="">Department</label>
+			<select name="department_id">
+				<?php foreach ($departArr as $depart): ?>
+					<option 
+						<?php if ($data['department_id'] == $depart['id']): ?>
+							selected
+						<?php endif ?>
+						value="<?php echo $depart['id'] ?>"><?php echo $depart['name'] ?></option>
+				<?php endforeach ?>
+			</select>
 		</div>
 		<div>
 			<img src="<?php echo $data['avatar']?>" width="150">

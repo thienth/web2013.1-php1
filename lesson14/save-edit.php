@@ -4,6 +4,7 @@ require_once './db.php';
 $id = $_POST['id'];
 $username = $_POST['username'];
 $email = $_POST['email'];
+$department_id = $_POST['department_id'];
 $image = $_FILES['avatar'];
 $avatar = "";
 
@@ -16,7 +17,8 @@ if($image['size'] > 0){ // kiem tra kich co anh
 
 $sql = "update users set 
 			username = '$username',
-				email = '$email'";
+			department_id = '$department_id',
+			email = '$email'";
 
 if($avatar != ""){
 	$sql .= ",
