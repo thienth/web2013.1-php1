@@ -1,3 +1,9 @@
+<?php 
+require_once './db.php';
+$sql = "select * from departments";
+$result = executeQuery($sql, true);
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +23,14 @@
 		<div>
 			<label for="">Email</label>
 			<input type="text" name="email" value="" placeholder="">
+		</div>
+		<div>
+			<label for="">Department</label>
+			<select name="department_id">
+				<?php foreach ($result as $depart): ?>
+					<option value="<?php echo $depart['id'] ?>"><?php echo $depart['name'] ?></option>
+				<?php endforeach ?>
+			</select>
 		</div>
 		<div>
 			<label for="">Password</label>

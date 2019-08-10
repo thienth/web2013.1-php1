@@ -4,6 +4,7 @@ require_once './db.php';
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$department_id = $_POST['department_id'];
 $image = $_FILES['avatar'];
 $avatar = "";
 // upload anh 
@@ -15,9 +16,9 @@ if($image['size'] > 0){ // kiem tra kich co anh
 
 // câu query
 $sql = "insert into users 
-			(username, password, email, avatar)
+			(username, password, email, avatar, department_id)
 		values 
-			('$username', '$password', '$email', '$avatar')";
+			('$username', '$password', '$email', '$avatar', '$department_id')";
 executeQuery($sql);
 
 
