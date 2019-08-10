@@ -1,7 +1,11 @@
 <?php 
 require_once './db.php';
 // câu query
-$sql = "select * from users";
+$sql = "select 	u.*,
+				d.name as department_name
+		from users u
+		join departments d
+			on u.department_id = d.id";
 
 $result = executeQuery($sql, true);
 
@@ -12,6 +16,7 @@ $result = executeQuery($sql, true);
  			<th>Username</th>
  			<th>Email</th>
  			<th>Avatar</th>
+ 			<th>Department</th>
  			<th>
  				<a href="add-form.php" title="">Add new</a>
  			</th>
@@ -25,6 +30,7 @@ $result = executeQuery($sql, true);
  				<td>
  					<img src="<?php echo $u['avatar'] ?>" width="100">
  				</td>
+ 				<td><?php echo $u['department_name'] ?></td>
  				<td>
  					<a href="edit-form.php?id=<?php echo $u['id']?>" title="">Edit</a>
  					<a href="remove.php?id=<?php echo $u['id']?>" title="">Remove</a>
